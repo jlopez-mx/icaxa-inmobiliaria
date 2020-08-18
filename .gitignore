@@ -7,6 +7,10 @@
 # Only exists if Bazel was run
 /bazel-out
 
+#bitmap images
+/src/assets/img/properties/*
+/src/assets/img/blog/*
+
 # dependencies
 /node_modules
 

@@ -1,1 +1,585 @@
-/* You can add global styles to this file, and also import other style files */
+body
+    font-family: 'Helvetica', 'Arial', sans-serif
+    position: relative
+
+main
+  /*background-image: url("assets/img/elements/lowpoly.svg")*/
+
+  /*background-image: url("data:image/svg+xml,***");*/
+
+html
+  scroll-behavior: smooth
+
+nav
+    
+    border-bottom: 1px solid #cfd0d1
+
+.navbar-nav
+    font-size: 1em
+    .active
+        a
+            font-size: 1.3em
+        color: #020f4a !important
+        font-weight: 600
+        font-size: 1.3em
+
+    .nav-item
+        line-height: 30px
+
+.separator
+    width: 1vp
+    background-color: #ff0411
+    border-bottom: 1px solid #020f4a
+    margin-top: 15px
+    margin-bottom: 15px
+
+.separator-end
+        width: 1vp
+        border-bottom: 1px solid #020f4a
+        height: 1px
+        margin-bottom: 20px
+
+div
+    h2
+        color: #020f4a
+    h1
+        font: strong
+
+.carousel
+    .carousel-control-prev
+        height: 480px
+    .carousel-control-next
+        height: 480px
+    
+
+.carousel-item
+    height: 480px
+    h1
+        font-size: 1.6rem
+        font-weight: 600
+        text-transform: uppercase
+
+.carousel-item
+    height: auto
+    h1
+        font-size: 1.6rem
+        font-weight: 600
+        text-transform: uppercase
+
+
+.carousel-item img
+    height: 500px
+
+body
+    background-color: #eaecef
+    background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23909090' fill-opacity='0.21' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E")
+
+h2
+    text-transform: uppercase
+    font-size: 1.5em
+    font-weight: 900
+
+footer
+    a
+        color: #7c7c7d
+        &:hover
+            color: #7c7c7d
+
+        font-size: 1.4em
+    font-size: 0.6em
+    p
+        font-size: 1.6em
+    .footer-copyright 
+        font-size: 1.7em
+
+.rounded-circle
+    padding: 10px
+    margin: 10px
+
+.card-inner
+    padding-right: 25px
+    padding-left: 25px
+    padding-bottom: 25px
+    p
+        font-weight: 300
+        font-size: 1em
+
+.bg-footer
+    background-color: #eaecef
+
+.card-blog
+    padding-top: 25px
+    padding-left: 10px
+    padding-right: 10px
+    padding-bottom: 10px
+    
+    p
+        font-size: 1em
+
+.jumbotron-top
+    padding-top: 70px
+    padding-bottom: 0px
+
+.jumbotron
+    p
+        font-size: 1em
+        padding-left: 1em
+    h1
+        font-size: 1.5em
+        font-weight: 600
+        color: #43474a
+    border-top: 1px solid #cfd0d1
+    border-bottom: 1px solid #cfd0d1
+    
+    
+        
+
+.btn-primary
+    background-color: #fb0042
+    border-color: #fb0042
+    &:hover
+        background-color: #fb0042
+        border-color: #fb0042
+    &:active
+        background-color: #fb0042
+        border-color: #fb0042
+
+
+.btn-secondary
+    background-color: #0e1652
+    border-color: #0e1652
+    &:hover
+        background-color: #0e1652
+
+.top-cross-ribbon
+    background: #dc3545
+    padding: 10px 43px
+    color: #FFF
+    position: absolute
+    top: 0
+    right: -50px
+    transform: rotate(45deg)
+    border: 1px dashed #FFF
+    box-shadow: 0 0 0 3px #EA4335
+    margin: 5px
+    text-transform: uppercase
+    font-size: 0.7em
+    font-weight: 900
+
+
+.box.ofh
+    overflow: hidden
+
+.box
+    position: relative
+    margin: 10px auto
+
+
+.cover-ribbon .cover-ribbon-inside
+    background: #EA4335
+    color: #FFF
+    transform: rotate(45deg)
+    position: absolute
+    right: -35px
+    top: 15px
+    padding: 10px
+    min-width: 127px
+    text-align: center
+
+.cover-ribbon .cover-ribbon-inside:before
+    width: 0
+    height: 0
+    border-left: 7px solid transparent
+    border-right: 7px solid transparent
+    border-bottom: 10px solid #992C23
+    position: absolute
+    left: 0
+    right: 0
+    bottom: 0
+    content: ""
+    top: 35px
+    transform: rotate(-45deg)
+
+.cover-ribbon .cover-ribbon-inside:after
+    width: 0
+    height: 0
+    border-top: 7px solid transparent
+    border-left: 10px solid #992C23
+    border-bottom: 7px solid transparent
+    position: absolute
+    left: 95%
+    right: 0
+    top: 34px
+    bottom: 0
+    content: ""
+    transform: rotate(-45deg)
+
+.favicon
+    width: 23px
+    height: 18px
+    margin-right: 5px
+    background: url('assets/img/icons/favicon.svg')
+    background-size: contain
+    display: inline-block
+    
+.icon-facebook
+    width: 35px
+    height: 35px
+    background: url('assets/img/icons/facebook-gray.svg')
+    background-size: contain
+
+.icon-instagram
+    width: 35px
+    height: 35px
+    background: url('assets/img/icons/instagram-gray.svg')
+    background-size: contain
+
+.icon-linkedin
+    width: 35px
+    height: 35px
+    background: url('assets/img/icons/linkedin-gray.svg')
+    background-size: contain
+
+.icon-youtube
+    width: 35px
+    height: 35px
+    background: url('assets/img/icons/youtube-gray.svg')
+    background-size: contain
+    
+.icon-whatsapp
+    width: 35px
+    height: 35px
+    background: url('assets/img/icons/whatsapp-gray.svg')
+    background-size: contain
+
+.social-icons
+    list-style-type: none
+    padding: 0
+    margin: 0
+    counter-reset: orderedlist
+    li
+        display: inline-block
+        padding-right: 1.5em
+
+.lead
+    font-size: 1.1rem
+
+h5
+    font-size: 1.2rem
+
+.jumbotron-fluid
+    margin-right: 0
+    margin-left: 0
+
+.featurette-divider
+    margin-top: 0.6em
+    margin-bottom: 0.6em
+
+.text-icaxa-primary
+    color: #0e1652
+
+
+.text-icaxa-gray
+    color: #7c7c7d
+    a
+        &:hover
+            color: #ff0411
+            text-decoration: none
+            font-weight:400
+
+
+.btn-outline-dark-2
+    background-color: #828589
+
+
+.nav-pills .nav-link
+    color: #44474a
+    padding: .4rem 1rem
+    
+.nav-pills .nav-link.active
+    border: 1px solid #000000
+    background-color: #e9ecef
+    color: #44474a
+
+
+
+
+
+
+
+.bs-callout 
+  padding: 20px
+  margin: 20px 0
+  border: 1px solid #eee
+  border-left-width: 5px
+  border-radius: 4px
+  margin-left: 50px
+
+.bs-callout-xl 
+  margin-left: 0px
+
+.bs-callout-lg 
+  margin-left: 50px
+
+.bs-callout-md 
+  margin-left: 100px
+
+.bs-callout-sm 
+  margin-left: 150px
+
+.bs-callout-xs 
+  margin-left: 200px
+
+.bs-callout h4 
+  margin-top: 0
+  margin-bottom: 5px
+
+.bs-callout p:last-child 
+  margin-bottom: 0
+
+.bs-callout code 
+  border-radius: 4px
+
+.bs-callout+.bs-callout 
+  margin-top: -5px
+
+.bs-callout-default 
+  border-left-color: #777
+  background-color: #f7f7f9
+
+.bs-callout-default h4 
+  color: #777
+
+.bs-callout-primary 
+  border-left-color: #428bca
+
+.bs-callout-primary
+    h4
+        color: #428bca
+
+.bs-callout-success 
+  border-left-color: #5cb85c
+  background-color: #efffe8
+
+.bs-callout-success
+    h4 
+        color: #5cb85c
+
+.bs-callout-danger 
+  border-left-color: #d9534f
+  background-color: #fcf2f2
+
+.bs-callout-danger
+    h4
+        color: #d9534f
+
+.bs-callout-warning
+  border-left-color: #f0ad4e
+  background-color: #fefbed
+
+.bs-callout-warning
+    h4
+        color: #f0ad4e
+
+.bs-callout-info
+  border-left-color: #5bc0de
+  background-color: #f0f7fd
+
+.bs-callout-info
+    h4
+        color: #5bc0de
+
+.bs-callout-default
+    .transparent
+        background-color: rgb(247, 247, 249, 0.7)
+
+.bs-callout-success.transparent 
+  background-color: rgb(239, 255, 232, 0.7)
+
+.bs-callout-warning.transparent
+  background-color: rgb(254, 251, 237, 0.7)
+
+.bs-callout-danger.transparent 
+  background-color: rgb(252, 242, 242, 0.7)
+
+
+.bs-callout-info.transparent
+  background-color: rgb(240, 247, 253, 0.7)
+
+.bs-callout.disabled
+  opacity: 0.4
+
+.date-card
+    font-size: 0.6em
+
+
+    /////////////
+
+
+
+.waves-container
+  position: relative
+  text-align: center
+  background: none
+  color: white
+
+.inner-header
+  height: 75vh
+  width: 100%
+  margin: 0
+  padding: 0
+
+.flex
+  /*Flexbox for containers
+  display: flex
+  justify-content: center
+  align-items: center
+  text-align: center
+
+.waves
+  position: relative
+  width: 100%
+  height: 15vh
+  margin-bottom: -7px
+
+  /*Fix for safari gap
+  min-height: 100px
+  max-height: 150px
+
+/* Animation
+
+.parallax > use
+  animation: move-forever 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite
+
+  &:nth-child(1)
+    animation-delay: -2s
+    animation-duration: 7s
+
+  &:nth-child(2)
+    animation-delay: -3s
+    animation-duration: 10s
+
+  &:nth-child(3)
+    animation-delay: -4s
+    animation-duration: 13s
+
+  &:nth-child(4)
+    animation-delay: -5s
+    animation-duration: 20s
+
+@keyframes move-forever
+  0%
+    transform: translate3d(-90px, 0, 0)
+
+  100%
+    transform: translate3d(85px, 0, 0)
+
+/*Shrinking for mobile
+@media (max-width: 768px)
+  .waves
+    height: 40px
+    min-height: 40px
+
+  .content
+    height: 30vh
+
+//////////////
+
+.spikes
+  position: relative
+  background: #d6d8d9
+
+  &::after
+    content: ''
+    position: absolute
+    right: 0
+    left: -0%
+    top: 100%
+    z-index: 10
+    display: block
+    height: 35px
+    background-size: 35px 100%
+    background-image: linear-gradient(135deg, #d6d8d9 25%, transparent 25%), linear-gradient(225deg, #d6d8d9 25%, transparent 25%)
+    background-position: 0 0
+
+
+/////////
+
+.carousel-control-prev-icon-quote, .carousel-control-next-icon-quote
+  height: 100px
+  width: 100px
+  outline: black
+  background-size: 100%, 100%
+  border-radius: 50%
+  border: 1px solid black !important
+  background-image: none
+
+
+.carousel .carousel-control-prev-icon-quote
+  
+.carousel-control-prev-icon-quote
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E") !important
+  height: 140px
+
+.carousel-control-next-icon-quote
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important
+  height: 140px
+
+.carousel-control-next-icon-quote:after
+  height: 200px
+
+.carousel-control-prev-icon-quote:after 
+  height: 200px
+
+  /////Trianglify Transitions
+
+#gradient-rotate, #trianglify-overlay
+  position: absolute
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+  width: 100vw
+  height: 800px
+
+#color-stop-1
+  -webkit-animation: change-color-1 8s ease-in-out infinite alternate
+  animation: change-color-1 8s ease-in-out infinite alternate
+
+#color-stop-2
+  -webkit-animation: change-color-2 8s ease-in-out infinite alternate
+  animation: change-color-2 8s ease-in-out infinite alternate
+
+#color-stop-3
+  -webkit-animation: change-color-3 8s ease-in-out infinite alternate
+  animation: change-color-3 8s ease-in-out infinite alternate
+
+@keyframes change-color-1
+  0%
+    stop-color: #acacac
+
+  50%
+    stop-color: #242424
+
+  100%
+    stop-color: #a5a5a5
+
+@keyframes change-color-2
+  0%
+    stop-color: #646464
+
+  50%
+    stop-color: #cecece
+
+  100%
+    stop-color: #a5a5a5
+
+@keyframes change-color-3
+  0%
+    stop-color: #404040
+
+  50%
+    stop-color: #888888
+
+  100%
+    stop-color: #444444

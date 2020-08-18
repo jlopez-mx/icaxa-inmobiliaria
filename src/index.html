@@ -1,13 +1,951 @@
 <!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>IcaxaInmobiliaria</title>
-  <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-</head>
-<body>
-  <app-root></app-root>
-</body>
+<html lang="es">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
+    <meta name="description" content="Inmobiliaria, Casas, Hogar, Realstate, Mazatlan, Sinaloa">
+    <meta name="author" content="Isaac Ríos Jacobo">
+    <link rel="icon" type="image/x-icon" href="assets/img/icons/favicon.svg">
+    <title>ICAXA Inmobiliaria</title>
+    <base href="/">
+    <script>$('body').scrollspy({ target: '#navbar-example' })</script>
+    <script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=5f3543b478e5f200121a84de&product=inline-share-buttons" async="async"></script>
+  </head>
+
+  <body data-spy="scroll" data-target="#navbar-example" data-offset="80">
+
+    <app-root></app-root>
+
+    <section class="spikes pt-5 mt-4"></section>
+
+    <div class="row jumbotron jumbotron-fluid rounded mb-0 pb-0" id="nosotros" style="padding-top:45px;" >
+      <div class="container">
+
+        <h1 class="display-5 pl-3 text-uppercase">
+          
+        
+          <svg width="1.3em" height="1.3em" viewBox="0 0 16 16" class="bi bi-house" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
+            <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
+          </svg>
+        
+          Encuentra tu inmueble ideal</h1> 
+        <p class="lead">Nos dedicamos a encontrar la mejor propiedad para cada una de tus necesidades, con experiencia, conocimiento y honestidad.</p>
+      </div>
+    </div>
+
+    <div id="fondito" style="position:relative; z-index: 0;">
+
+      <svg id="gradient-rotate" preserveAspectRatio="none" viewBox="0 0 500 500">
+        <defs>
+          <linearGradient x1="0%" y1="0%" y2="100%" id="a">
+            <stop id="color-stop-1" stop-color="#d6d8d9" offset="0%"></stop>
+            <stop id="color-stop-2" stop-color="#d6d8d9" offset="65%"></stop>
+            <stop id="color-stop-3" stop-color="#000000" offset="100%"></stop>
+          </linearGradient>
+        </defs>
+        <path fill="url(#a)" d="M0 0h500v500H0z"></path>
+      </svg>
+    </div>
+
+    <script src="assets/js/trianglify.min.js"></script>
+    <script>
+    // set up the base pattern
+    var pattern = Trianglify({
+      height: window.innerHeight,
+      width: window.innerWidth,
+      x_colors: ['rgba(233, 236, 239, 1)', 'rgba(150, 150, 150, 0.6)', 'rgba(255, 255, 255, 0.9)'],
+      stroke_width: 0,
+      cell_size: Math.ceil(window.innerWidth / 14)})
+    var svg = pattern.svg()
+    svg.id = 'trianglify-overlay'
+    document.getElementById("fondito").appendChild(svg)
+    </script>
+
+    <header>
+      <nav class="navbar navbar-expand-md fixed-top bg-light shadow-sm container-fluid navbar-light" id="navbar-example">
+        <div class="container">
+          <a class="navbar-brand " href="#"><img src="assets/img/elements/icaxa-logo-large.svg" width="220px" height="40px"/></a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+              
+              <ul class="navbar-nav mr-auto text-uppercase text-icaxa-primary" role="tablist">
+                <li class="nav-item">
+                  <a class="nav-link" href="#nosotros">Nosotros</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#propiedades">Propiedades</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#blog">Blog</a>
+                </li>
+              </ul>
+
+        <div class="form-inline mt-2 mt-md-0">
+          <select class="custom-select" id="inputGroupSelect04" aria-label="Example select with button addon">
+            <option selected>Tipo de inmueble</option>
+            <option value="1">Casa</option>
+            <option value="2">Departamento</option>
+            <option value="3">Condominio</option>
+            <option value="4">Lotes</option>
+            <option value="5">Locales</option>
+          </select>
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary ml-2" type="button">Buscar</button>
+          </div>
+        </div>
+        </div>
+        </div>
+      </nav>
+    </header>
+    
+    <main role="main">
+
+        <div class="container px-0 pt-2">
+          
+        <div class="alert alert-dark alert-dismissible fade show mb-2" role="alert">
+            <svg width="1.3em" height="1.3em" viewBox="0 0 16 16" class="bi bi-exclamation-octagon" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" d="M4.54.146A.5.5 0 0 1 4.893 0h6.214a.5.5 0 0 1 .353.146l4.394 4.394a.5.5 0 0 1 .146.353v6.214a.5.5 0 0 1-.146.353l-4.394 4.394a.5.5 0 0 1-.353.146H4.893a.5.5 0 0 1-.353-.146L.146 11.46A.5.5 0 0 1 0 11.107V4.893a.5.5 0 0 1 .146-.353L4.54.146zM5.1 1L1 5.1v5.8L5.1 15h5.8l4.1-4.1V5.1L10.9 1H5.1z"/>
+              <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z"/>
+            </svg>
+
+          Nuestra revista digital <strong>ICAXA NEWS</strong> ya está disponible.
+            
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            
+            <a href="https://www.flipsnack.com/icaxainmobiliaria/revista-icaxa-news.html" class="alert-link">Descárgala aquí</a>.
+            <svg width="1.3em" height="1.3em" viewBox="0 0 16 16" class="bi bi-book" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" d="M3.214 1.072C4.813.752 6.916.71 8.354 2.146A.5.5 0 0 1 8.5 2.5v11a.5.5 0 0 1-.854.354c-.843-.844-2.115-1.059-3.47-.92-1.344.14-2.66.617-3.452 1.013A.5.5 0 0 1 0 13.5v-11a.5.5 0 0 1 .276-.447L.5 2.5l-.224-.447.002-.001.004-.002.013-.006a5.017 5.017 0 0 1 .22-.103 12.958 12.958 0 0 1 2.7-.869zM1 2.82v9.908c.846-.343 1.944-.672 3.074-.788 1.143-.118 2.387-.023 3.426.56V2.718c-1.063-.929-2.631-.956-4.09-.664A11.958 11.958 0 0 0 1 2.82z"/>
+              <path fill-rule="evenodd" d="M12.786 1.072C11.188.752 9.084.71 7.646 2.146A.5.5 0 0 0 7.5 2.5v11a.5.5 0 0 0 .854.354c.843-.844 2.115-1.059 3.47-.92 1.344.14 2.66.617 3.452 1.013A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.276-.447L15.5 2.5l.224-.447-.002-.001-.004-.002-.013-.006-.047-.023a12.582 12.582 0 0 0-.799-.34 12.96 12.96 0 0 0-2.073-.609zM15 2.82v9.908c-.846-.343-1.944-.672-3.074-.788-1.143-.118-2.387-.023-3.426.56V2.718c1.063-.929 2.631-.956 4.09-.664A11.956 11.956 0 0 1 15 2.82z"/>
+            </svg>
+        </div>
+    </div>
+    
+      <div id="myCarousel" class="carousel slide container px-0 shadow-sm mb-3" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+          <li data-target="#myCarousel" data-slide-to="1"></li>
+          <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="first-slide w-100 rounded" src="assets/img/blog/1.jpg" alt="First slide"/>
+            <div class="container">
+              <div class="carousel-caption text-left">
+                <h1>Beneficios de vivir frente al mar.</h1>
+                <p>Cuando vives en una ciudad grande lo que más deseas es despertar con una hermosa vista al mar que únicamente es posible cuando estás de vacaciones en algún puerto...</p>
+                <p><a class="btn btn-lg btn-primary" href="#" role="button">Ver más &raquo;</a></p>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img class="second-slide w-100 rounded" src="assets/img/blog/2.jpg" alt="Second slide"/>
+            <div class="container">
+              <div class="carousel-caption">
+                <h1>Jubilación tropical.</h1>
+                <p>Así como le dedicaste tiempo a decidir dónde ibas a ejercer tu profesión, ahora te toca decidir en dónde deseas disfrutar tus años de jubilado...</p>
+                <p><a class="btn btn-lg btn-primary" href="#" role="button">Ver más &raquo;</a></p>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img class="third-slide w-100 rounded" src="assets/img/blog/3.jpg" alt="Third slide"/>
+            <div class="container">
+              <div class="carousel-caption text-right">
+                <h1>Una reconfortante taza de café.</h1>
+                <p>Si eres de los que, aunque vivas frente al mar y sientas los cálidos 36 grados, tu mente y alma piden un café, te compartimos unas excelentes opciones donde podrás disfrutar esta aromática y deliciosa bebida...</p>
+                <p><a class="btn btn-lg btn-primary" href="#" role="button">Ver más &raquo;</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+
+      <div class="container marketing" style="z-index:2; position:relative;">
+
+        <div class="row">
+
+          <div class="col-lg-4 rounded pl-0">
+            <div class="card-inner bg-light shadow-sm rounded">
+              <div class="mx-auto pt-2 pb-3" style="width: 100px;">
+                <img class="" src="assets/img/icons/deal.svg" alt="Venta y renta" width="100px" height="100px"><!--rounded-circle-->
+              </div>
+              <h2>Venta y renta<span class="text-danger"> . </span></h2>
+              <p class=>Te ayudamos a localizar la propiedad que estás buscando de manera rápida y sin necesidad de involucrar intermediarios. ¡Asegura el mejor precio!...</p>
+              <a class="btn btn-secondary secondary-custom" href="#" role="button">Ver más &raquo;</a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 rounded px-0">
+            <div class="card-inner bg-light shadow-sm rounded">
+              <div class="mx-auto pt-2 pb-3" style="width: 100px;">
+                <img class="" src="assets/img/icons/form.svg" alt="Consultoría" width="100px" height="100px"><!--rounded-circle-->
+              </div>
+              <h2>Consultoría<span class="text-danger"> . </span></h2>
+              <p>Te brindamos asesoramiento y acompañamiento sin costo alguno en las diferentes etapas del proceso de compra-venta de bienes inmuebles...</p>
+              <a class="btn btn-secondary secondary-custom" href="#" role="button">Ver más &raquo;</a>
+          </div>
+          </div>
+
+          <div class="col-lg-4 rounded pr-0">
+            <div class="card-inner bg-light shadow-sm rounded">
+              <div class="mx-auto pt-2 pb-3" style="width: 100px;">
+                <img class="" src="assets/img/icons/earnings.svg" alt="Gestión de créditos" width="100px" height="100px"><!--rounded-circle-->
+              </div>
+              <h2>Gestión de créditos<span class="text-danger"> . </span></h2>
+              <p>Te asesoramos en la apertura y trámite de financiamientos hipotecarios para que puedas adquirir tu propiedad de manera rápida y segura...</p>
+              <a class="btn btn-secondary secondary-custom " href="#" role="button">Ver más &raquo;</a>
+            </div>
+          </div>
+
+        </div>
+
+      </div><!-- FIND DE MARKETING-->
+
+            <!--Waves Container-->
+            <div class="pt-4" style="margin-top: -250px; z-index:1;">
+                <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+                    <defs>
+                        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+                    </defs>
+                    <g class="parallax">
+                        <use xlink:href="#gentle-wave" x="48" y="0" fill="#020f4a" />
+                        <use xlink:href="#gentle-wave" x="48" y="3" fill="#dc3545" />
+                        <use xlink:href="#gentle-wave" x="48" y="5" fill="#c6c9cd" />
+                        <use xlink:href="#gentle-wave" x="48" y="7" fill="#e9ecef" />
+                    </g>
+                </svg>
+            </div>
+            <!--Waves end-->
+
+        <div class="row jumbotron jumbotron-fluid rounded pb-4 m-0" style="background-color: #e9ecef; padding-top: 120px; margin-top:0;">
+          <div class="container" ">
+
+          <div class="row">
+
+            <div class="col-10 mx-auto">
+              <div>
+                <div class="py-4">
+
+                  <div class="row px-auto">
+              
+                    <div class="col-md-9 justify-content-center">
+                     <h1 class="display-5 pl-3 text-uppercase"> 
+                    
+                      <svg width="1.3em" height="1.3em" viewBox="0 0 16 16" class="bi bi-award" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M9.669.864L8 0 6.331.864l-1.858.282-.842 1.68-1.337 1.32L2.6 6l-.306 1.854 1.337 1.32.842 1.68 1.858.282L8 12l1.669-.864 1.858-.282.842-1.68 1.337-1.32L13.4 6l.306-1.854-1.337-1.32-.842-1.68L9.669.864zm1.196 1.193l-1.51-.229L8 1.126l-1.355.702-1.51.229-.684 1.365-1.086 1.072L3.614 6l-.25 1.506 1.087 1.072.684 1.365 1.51.229L8 10.874l1.356-.702 1.509-.229.684-1.365 1.086-1.072L12.387 6l.248-1.506-1.086-1.072-.684-1.365z"/>
+                        <path d="M4 11.794V16l4-1 4 1v-4.206l-2.018.306L8 13.126 6.018 12.1 4 11.794z"/>
+                      </svg>¿A qué nos dedicamos?</h1> 
+                        
+                          <p class="lead">Brindamos servicios inmobiliarios profesionales de excelencia a través de nuestra experiencia y conocimiento del mercado local.</p>
+                        </div>
+                        
+                        <div class="col-md-3 d-flex justify-content-center">
+
+                          <!-- Business Man Icon-->
+                            <svg style="filter: grayscale(100%);" xmlns="http://www.w3.org/2000/svg" width="110" height="110" viewBox="0 0 146 146"><title>001-business</title><rect x="0.5" y="0.5" width="145" height="145" fill="none"/><path d="M119.4,41.94v60H109V47.54a0.8,0.8,0,0,0-.8-0.8H29a0.8,0.8,0,0,0-.8.8v54.24l-0.14.16H19.4v-60a4.8,4.8,0,0,1,4.8-4.8h90.4A4.8,4.8,0,0,1,119.4,41.94Z" fill="#d8dadf"/><path d="M28.2,101.94V47.54a0.8,0.8,0,0,1,.8-0.8h79.2a0.8,0.8,0,0,1,.8.8v54.4" fill="#fff" stroke="#515f76" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2.4"/><path d="M128.2,102.74v9.6l-8.8,2.4H19.4l-8.8-2.4v-9.6a0.8,0.8,0,0,1,.8-0.8h116A0.8,0.8,0,0,1,128.2,102.74Z" fill="#d8dadf"/><line x1="38.49" y1="56.6" x2="57.49" y2="56.6" fill="none" stroke="#515f76" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4"/><line x1="38.49" y1="64.6" x2="67.49" y2="64.6" fill="none" stroke="#515f76" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4"/><circle cx="138.6" cy="105.54" r="2" fill="none" stroke="#b8b9ba" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1.6"/><circle cx="119.4" cy="123" r="1.6" fill="#b8b9ba"/><circle cx="6.2" cy="22.2" r="1.6" fill="#b8b9ba"/><line x1="133.26" y1="121.4" x2="136.46" y2="124.6" fill="none" stroke="#b8b9ba" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1.6"/><line x1="136.46" y1="121.4" x2="133.26" y2="124.6" fill="none" stroke="#b8b9ba" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1.6"/><circle cx="31" cy="26.2" r="1.6" fill="#b8b9ba"/><path d="M14.47,28L16.8,26.8a0.08,0.08,0,0,1,.12.08l-0.44,2.59,2,1.95-2.76.4-1.24,2.5-1.24-2.5-2.6-.38a0.08,0.08,0,0,1,0-.14l1.88-1.84L12,26.73Z" fill="#b8b9ba"/><circle cx="7.4" cy="43.14" r="2" fill="none" stroke="#a8cbeb" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1.6"/><path d="M16.56,109.1l111.24-2.76v-3.6a0.4,0.4,0,0,0-.4-0.4H11.4a1.2,1.2,0,0,0-1.2,1.2v8.8l4,1.09V111.5A2.4,2.4,0,0,1,16.56,109.1Z" fill="#fff"/><path d="M19.4,101.94v-60a4.8,4.8,0,0,1,4.8-4.8h90.4a4.8,4.8,0,0,1,4.8,4.8v60" fill="none" stroke="#515f76" stroke-miterlimit="10" stroke-width="2.4"/><path d="M99.22,70v31H85.14V70a2.56,2.56,0,0,1,2.56-2.56h9A2.56,2.56,0,0,1,99.22,70Z" fill="#7bd489"/><path d="M53.14,89v12.8H39.06V89a2.56,2.56,0,0,1,2.56-2.56h9A2.56,2.56,0,0,1,53.14,89Z" fill="#a8cbeb"/><path d="M85.14,101V70a2.56,2.56,0,0,1,2.56-2.56h9A2.56,2.56,0,0,1,99.22,70v31" fill="none" stroke="#515f76" stroke-miterlimit="10" stroke-width="2.4"/><path d="M39.06,101.85V89a2.56,2.56,0,0,1,2.56-2.56h9A2.56,2.56,0,0,1,53.14,89v12.8" fill="none" stroke="#515f76" stroke-miterlimit="10" stroke-width="2.4"/><path d="M11.4,101.94a0.8,0.8,0,0,0-.8.8v9.36a0.32,0.32,0,0,0,.24.31l8.52,2.32H119.44L128,112.4a0.32,0.32,0,0,0,.24-0.31v-9.36a0.8,0.8,0,0,0-.8-0.8H11.4Z" fill="none" stroke="#515f76" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2.4"/><path d="M76.57,78v23H62.49V78a2.56,2.56,0,0,1,2.56-2.56h9A2.56,2.56,0,0,1,76.57,78Z" fill="#ea9080"/><path d="M62.1,101V78a2.56,2.56,0,0,1,2.56-2.56h9A2.56,2.56,0,0,1,76.18,78v23" fill="none" stroke="#515f76" stroke-miterlimit="10" stroke-width="2.4"/></svg>
+                        </div>
+                      </div>
+                </div>
+                
+                <div class="py-4 alert alert-dark alert-dismissible fade show">
+                  
+                  <div class="row">
+              
+                    <div class="col-md-3 d-flex justify-content-center">
+                      <svg style="filter: grayscale(100%);" xmlns="http://www.w3.org/2000/svg" width="110" height="110" viewBox="0 0 146 146"><title>001-business</title><rect x="0.5" y="0.5" width="145" height="145" fill="none"/><circle cx="23.35" cy="69.53" r="4.8" fill="#a8cbeb"/><circle cx="109.75" cy="34.33" r="4.8" fill="#a8cbeb"/><circle cx="80.95" cy="58.33" r="4.8" fill="#a8cbeb"/><path d="M48,49.61a4.67,4.67,0,0,1-.7-2.48A4.81,4.81,0,1,1,48,49.61Z" fill="#a8cbeb"/><path d="M118.55,53.53v52.8h-17.6V53.53a3.2,3.2,0,0,1,3.2-3.2h11.2A3.2,3.2,0,0,1,118.55,53.53Z" fill="#ea9080"/><path d="M60.95,66.33v40H43.35v-40a3.2,3.2,0,0,1,3.2-3.2h11.2A3.2,3.2,0,0,1,60.95,66.33Z" fill="#7bd489"/><path d="M14.55,106.33V88.73a3.2,3.2,0,0,1,3.2-3.2h11.2a3.2,3.2,0,0,1,3.2,3.2v17.6" fill="none" stroke="#515f76" stroke-miterlimit="10" stroke-width="2.4"/><path d="M72.15,106.33V77.53a3.2,3.2,0,0,1,3.2-3.2h11.2a3.2,3.2,0,0,1,3.2,3.2v28.8" fill="#fff" stroke="#515f76" stroke-miterlimit="10" stroke-width="2.4"/><path d="M56.95,47.13A4.8,4.8,0,0,1,48,49.61a4.67,4.67,0,0,1-.7-2.48A4.8,4.8,0,1,1,56.95,47.13Z" fill="none" stroke="#515f76" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2.4"/><circle cx="109.75" cy="34.33" r="4.8" fill="none" stroke="#515f76" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2.4"/><circle cx="80.95" cy="58.33" r="4.8" fill="none" stroke="#515f76" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2.4"/><circle cx="23.35" cy="69.53" r="4.8" fill="none" stroke="#515f76" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2.4"/><polyline points="27.5 66.33 48.04 49.6 48.15 49.52" fill="none" stroke="#515f76" stroke-miterlimit="10" stroke-width="2.4"/><line x1="56.95" y1="48.73" x2="76.15" y2="56.59" fill="none" stroke="#515f76" stroke-miterlimit="10" stroke-width="2.4"/><line x1="85.19" y1="55.79" x2="105.68" y2="37.84" fill="none" stroke="#515f76" stroke-miterlimit="10" stroke-width="2.4"/><path d="M115.35,50.4h-11.2a3.54,3.54,0,0,0-3.53,3.53v52.39l2.4,0.07L103.38,57a2.4,2.4,0,0,1,2-2.36l13-1.12h0A3,3,0,0,0,115.35,50.4Z" fill="#eeb8a9" opacity="0.8"/><path d="M100.95,106.33V53.53a3.2,3.2,0,0,1,3.2-3.2h11.2a3.2,3.2,0,0,1,3.2,3.2v52.8" fill="none" stroke="#515f76" stroke-miterlimit="10" stroke-width="2.4"/><path d="M57.75,63.2H46.55A3.41,3.41,0,0,0,43,66.29l0,40.11h2.43V70.46a2.4,2.4,0,0,1,2.39-2.4l13-1.7A3.19,3.19,0,0,0,57.75,63.2Z" fill="#a4e0b3" opacity="0.8"/><path d="M43.35,106.33v-40a3.2,3.2,0,0,1,3.2-3.2h11.2a3.2,3.2,0,0,1,3.2,3.2v40" fill="none" stroke="#515f76" stroke-miterlimit="10" stroke-width="2.4"/><line x1="2.75" y1="113.67" x2="5.95" y2="116.87" fill="none" stroke="#b8b9ba" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1.6"/><line x1="5.95" y1="113.67" x2="2.75" y2="116.87" fill="none" stroke="#b8b9ba" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1.6"/><circle cx="121.15" cy="115.27" r="1.6" fill="#b8b9ba"/><circle cx="8.75" cy="69.27" r="2" fill="none" stroke="#b8b9ba" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1.6"/><circle cx="13.95" cy="60.07" r="1.6" fill="#b8b9ba"/><path d="M140.05,99.36l2.33-1.22a0.08,0.08,0,0,1,.12.08l-0.44,2.59,2,1.95-2.76.4-1.24,2.5-1.24-2.5-2.6-.38a0.08,0.08,0,0,1,0-.14l1.88-1.84-0.47-2.75Z" fill="#a8cbeb"/><circle cx="134.75" cy="89.67" r="1.6" fill="#b8b9ba"/><circle cx="133.55" cy="114.87" r="2" fill="none" stroke="#b8b9ba" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1.6"/><line x1="8.15" y1="106.33" x2="126.55" y2="106.33" fill="none" stroke="#515f76" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2.4"/></svg>
+                    </div>
+
+                    <div class="col-md-9 justify-content-center">
+                     <h1 class="display-5 pl-3 text-uppercase"> 
+                    
+                      <svg width="1.3em" height="1.3em" viewBox="0 0 16 16" class="bi bi-check-all" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M8.97 4.97a.75.75 0 0 1 1.071 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L2.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093L8.95 4.992a.252.252 0 0 1 .02-.022zm-.92 5.14l.92.92a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 1 0-1.091-1.028L9.477 9.417l-.485-.486-.943 1.179z"/>
+                      </svg> ¿Qué nos caracteriza?</h1> 
+                        
+                      <p>
+                      <div class="badges">
+                        <span class="badge badge-danger">Confianza</span>
+                        <span class="badge badge-secondary">Protegemos tu inversión</span>
+                        <span class="badge badge-danger">Orientación al cliente</span>
+                        <span class="badge badge-secondary">Solucionamos tus necesidades</span>
+                        <span class="badge badge-danger">Orientados a cumplir</span>
+                        <span class="badge badge-secondary">Calidad</span>
+                        <span class="badge badge-danger">Atención personalizada</span>
+                        <span class="badge badge-secondary">Pasión</span>
+                        <span class="badge badge-danger">Ayudarte es nuestro motor</span>
+                        <span class="badge badge-secondary">Innovación</span>
+                        <span class="badge badge-danger">Mejora constante de procesos</span>
+                      </div>
+                    </p>
+
+                        </div>
+
+                      </div>
+
+                </div>
+
+                <!-- Last tab -->
+                <div class="py-4">
+                  <div class="row">
+              
+                    <div class="col-md-9 justify-content-center">
+                     <h1 class="display-5 pl-3 text-uppercase"> 
+                    
+                      <svg width="1.3em" height="1.3em" viewBox="0 0 16 16" class="bi bi-person-lines-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm7 1.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5zm2 9a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5z"/>
+                      </svg>   ¿Quiénes somos?</h1> 
+                        
+                          <p class="lead">Somos una firma inmobiliaria profesional que sirve a vendedores y compradores propiedades en Mazatlán, con el firme compromiso de brindar experiencias felices a nuestros clientes.</p>
+                        </div>
+      
+                        <div class="col-md-3 d-flex justify-content-center">
+
+                          <!-- Business Man Icon--> 
+                         <svg style="filter: grayscale(100%);" xmlns="http://www.w3.org/2000/svg" width="110" height="110" viewBox="0 0 146 146"><title>001-business</title><rect x="0.5" y="0.5" width="145" height="145" fill="none"/><polygon points="83.29 9.14 83.29 18.74 79.29 18.74 59.29 18.74 55.29 18.74 55.29 9.14 83.29 9.14" fill="#020f4a"/><path d="M84.89,45.14v9.72a4.12,4.12,0,0,1-8,.28V57.4a3.51,3.51,0,0,1-.81,1.8,3.83,3.83,0,0,1-3,1.14A4.23,4.23,0,0,1,70.3,59.2a3.23,3.23,0,0,1-1.1-2.06,8.49,8.49,0,0,1,0-1,8.84,8.84,0,0,0,0-1s-0.25,1-.29,1.14a4.1,4.1,0,0,1-3.62,2.41,4.43,4.43,0,0,1-4.09-4.34,4.6,4.6,0,0,1-3.38,1.42c-2.14-.18-4.12-2.4-4.22-5.42v-16a12.47,12.47,0,0,1,1.39-5.86A15.55,15.55,0,0,1,59,23.78a3.55,3.55,0,0,0,.29-1.42V18.74h20v2.8s5.85,5.13,6.49,5.82c3.49,3.74,5.3,4.18,5.51,12V50.44a1.62,1.62,0,0,1-.5.48c-1.23.74-3.14-.58-3.41-0.76C85.21,48.66,84.94,45.81,84.89,45.14Z" fill="#fff"/><path d="M59.29,18.74v3.62A3.55,3.55,0,0,1,59,23.78a15.55,15.55,0,0,0-3.92,4.67,12.47,12.47,0,0,0-1.39,5.86v16c0.1,3,2.09,5.24,4.22,5.42a4.6,4.6,0,0,0,3.38-1.42,4.43,4.43,0,0,0,4.09,4.34A4.1,4.1,0,0,0,69,56.28c0-.15.28-1.14,0.29-1.14a8.84,8.84,0,0,1,0,1,8.49,8.49,0,0,0,0,1,3.23,3.23,0,0,0,1.1,2.06,4.23,4.23,0,0,0,2.79,1.14,3.83,3.83,0,0,0,3-1.14,3.51,3.51,0,0,0,.81-1.8V55.14a4.12,4.12,0,0,0,8-.28V38.74" fill="none" stroke="#515f76" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4"/><path d="M84.89,45.14c0,0.66.32,3.52,2.49,5,0.27,0.18,2.18,1.5,3.41.76a1.62,1.62,0,0,0,.5-0.48V39.33c-0.21-7.78-2-8.22-5.51-12-0.64-.69-6.49-5.82-6.49-5.82v-2.8" fill="none" stroke="#515f76" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4"/><line x1="61.69" y1="52.16" x2="61.69" y2="54.56" fill="none" stroke="#515f76" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4"/><polyline points="69.29 54.16 69.29 55.14 69.29 55.76" fill="none" stroke="#515f76" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4"/><line x1="76.82" y1="53.36" x2="76.82" y2="54.96" fill="none" stroke="#515f76" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4"/><path d="M118,82.8v41.47a4.8,4.8,0,0,1-4.8,4.8H32.36a4.8,4.8,0,0,1-4.8-4.8V82.8a12.8,12.8,0,0,0,12.8,12.8H66v9.47a0.8,0.8,0,0,0,.8.8h12a0.8,0.8,0,0,0,.8-0.8V95.6h27.2C113.83,95.6,118,89.86,118,82.8Z" fill="#dc3545"/><path d="M93.16,63.47h20a4.8,4.8,0,0,1,4.8,4.8V82.8c0,7.06-4.13,12.8-11.2,12.8H79.56V89.87a0.8,0.8,0,0,0-.8-0.8h-12a0.8,0.8,0,0,0-.8.8V95.6H40.36a12.8,12.8,0,0,1-12.8-12.8V68.27a4.8,4.8,0,0,1,4.8-4.8h60.8Z" fill="#dc3545"/><path d="M79.56,95.6v9.47a0.8,0.8,0,0,1-.8.8h-12a0.8,0.8,0,0,1-.8-0.8V89.87a0.8,0.8,0,0,1,.8-0.8h12a0.8,0.8,0,0,1,.8.8V95.6Z" fill="#fff"/><path d="M50.76,63.9V50.48a0.8,0.8,0,0,1,.8-0.8h2.8" fill="none" stroke="#515f76" stroke-linejoin="round" stroke-width="2.4"/><path d="M92,49.68h0.4a0.8,0.8,0,0,1,.8.8V63.9" fill="none" stroke="#515f76" stroke-linejoin="round" stroke-width="2.4"/><path d="M30,86.8V73.87c0-2.65,2.73-4.4,5.38-4.4,0,0,82-1.44,82.46-1.27a4.66,4.66,0,0,0-4.68-4.2H32.36C29.71,64,27,65.62,27,68.27V82.8a12.69,12.69,0,0,0,4.52,9.84A12.81,12.81,0,0,1,30,86.8Z" fill="#eeb8a9"/><path d="M40.36,96A13.64,13.64,0,0,1,27,82.8v4A13.64,13.64,0,0,0,40.36,100H65V96H40.36Z" fill="#ec857c"/><path d="M106.76,96H79v4h27.76c7.07,0,10.24-6.14,10.24-13.2v-4C117,89.86,113.83,96,106.76,96Z" fill="#ec857c"/><path d="M118,82.8c0,7.06-4.13,12.8-11.2,12.8H80.29" fill="none" stroke="#515f76" stroke-linejoin="round" stroke-width="2.4"/><path d="M79.56,95.6v9.47a0.8,0.8,0,0,1-.8.8h-12a0.8,0.8,0,0,1-.8-0.8V89.87a0.8,0.8,0,0,1,.8-0.8h12a0.8,0.8,0,0,1,.8.8V95.6Z" fill="none" stroke="#515f76" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4"/><path d="M31,124.27v-33a12.51,12.51,0,0,1-3-8.45v41.47c0,2.65,2.51,5.73,5.16,5.73h3.2C33.71,130,31,126.92,31,124.27Z" fill="#eeb8a9"/><path d="M65.56,95.6H40.36a12.8,12.8,0,0,1-12.8-12.8" fill="none" stroke="#515f76" stroke-linejoin="round" stroke-width="2.4"/><path d="M118,82.8v41.47a4.8,4.8,0,0,1-4.8,4.8H32.36a4.8,4.8,0,0,1-4.8-4.8v-56a4.8,4.8,0,0,1,4.8-4.8h80.8a4.8,4.8,0,0,1,4.8,4.8V82.8Z" fill="none" stroke="#515f76" stroke-linejoin="round" stroke-width="2.4"/><circle cx="117.96" cy="55.19" r="1.6" fill="#b8b9ba"/><circle cx="126.73" cy="72.67" r="2" fill="none" stroke="#b8b9ba" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1.6"/><line x1="126" y1="133" x2="126" y2="139" fill="none" stroke="#b8b9ba" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><line x1="129" y1="136" x2="123" y2="136" fill="none" stroke="#b8b9ba" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><circle cx="112.36" cy="137.47" r="1.6" fill="#b8b9ba"/><line x1="16.62" y1="137.33" x2="19.82" y2="140.53" fill="none" stroke="#a8cbeb" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1.6"/><line x1="19.82" y1="137.33" x2="16.62" y2="140.53" fill="none" stroke="#a8cbeb" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1.6"/><path d="M44.91,15.63l2.33-1.22a0.08,0.08,0,0,1,.12.08l-0.44,2.59,2,1.95-2.76.4-1.24,2.5-1.24-2.5-2.6-.38a0.08,0.08,0,0,1,0-.14l1.88-1.84-0.47-2.75Z" fill="#b8b9ba"/><circle cx="19.82" cy="127.29" r="1.6" fill="#b8b9ba"/><circle cx="34.76" cy="142.13" r="1.6" fill="#b8b9ba"/><circle cx="41.8" cy="3.87" r="1.6" fill="#b8b9ba"/><circle cx="34.76" cy="25.54" r="2" fill="none" stroke="#b8b9ba" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1.6"/><path d="M83.29,17.54h-20l-1.77-.32a3.2,3.2,0,0,1-2.63-3.15V8.74h-3.2v9.6h28v-0.8h-0.4Z" fill="#d2e1ef"/><polyline points="83.29 9.14 83.29 18.74 79.29 18.74 59.29 18.74 55.29 18.74 55.29 9.14" fill="none" stroke="#515f76" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4"/></svg>
+                          <!-- END / Business Man Icon-->
+
+                        </div>
+                      </div>
+                </div>
+                <!-- END Last tab -->
+
+              </div>
+            </div>
+          </div>
+
+          <div class="col bg-light rounded shadow-sm box ofh">
+            <div class="card-blog text-center">
+            <img class="" src="assets/img/icons/quotes.svg" alt="Lo que dicen nuestros clientes..." width="100px" height="100px">
+
+<!-- Quotes -->
+
+<div id="carouselExampleIndicators" class="carousel carousel-quote slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item-quote carousel-item active">
+      <blockquote class="blockquote">
+        <p class="lead">¡Felicidades 1 a Isaac Ríos por el Grand Opening de ICAXA! Te deseo mucho éxito, amigo.</p>
+        <footer class="blockquote-footer" style="border-top: none;" >José Heriberto López Ruiz<cite title="Source Title"> 2020. Mazatlán, Sinaloa.</cite></footer>
+      </blockquote>
+    </div>
+    <div class="carousel-item-quote carousel-item">
+      <blockquote class="blockquote">
+        <p class="lead">¡Felicidades 2 a Isaac Ríos por el Grand Opening de ICAXA! Te deseo mucho éxito, amigo.</p>
+        <footer class="blockquote-footer" style="border-top: none;" >José Heriberto López Ruiz<cite title="Source Title"> 2020. Mazatlán, Sinaloa.</cite></footer>
+      </blockquote>
+    </div>
+    <div class="carousel-item-quote carousel-item">
+      <blockquote class="blockquote">
+        <p class="lead">¡Felicidades 3 a Isaac Ríos por el Grand Opening de ICAXA! Te deseo mucho éxito, amigo.</p>
+        <footer class="blockquote-footer" style="border-top: none;" >José Heriberto López Ruiz<cite title="Source Title"> 2020. Mazatlán, Sinaloa.</cite></footer>
+      </blockquote>
+    </div>
+  </div>
+  <a class="carousel-control-prev carousel-control-prev-quote" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon-quote" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next carousel-control-next-quote" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon-quote" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
+<!--END /. Quotes-->
+
+            </div>
+          </div>
+          </div>
+        </div>
+
+      </main>
+      <!--Cintillo final -->
+          <svg width="100%" height="12em" style="margin-top: -169px;" viewBox="0 0 100 100" preserveAspectRatio="none">
+            <path d="M0 0 L50 90 L100 0 V100 H0" fill="#d6d8d9" />
+          </svg>
+    <!--END /.Cintillo final -->
+
+        <section class="spikes pt-0 mt-0"></section>
+        <div class="row jumbotron jumbotron-fluid mb-0 pb-2 pt-5" id="nosotros" data-offset="-200px">
+          <div class="container">
+    
+            <h1 class="display-5 pl-3 text-uppercase">
+            
+              <svg width="1.3em" height="1.3em" viewBox="0 0 16 16" class="bi bi-pencil" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M11.293 1.293a1 1 0 0 1 1.414 0l2 2a1 1 0 0 1 0 1.414l-9 9a1 1 0 0 1-.39.242l-3 1a1 1 0 0 1-1.266-1.265l1-3a1 1 0 0 1 .242-.391l9-9zM12 2l2 2-9 9-3 1 1-3 9-9z"></path>
+                <path fill-rule="evenodd" d="M12.146 6.354l-2.5-2.5.708-.708 2.5 2.5-.707.708zM3 10v.5a.5.5 0 0 0 .5.5H4v.5a.5.5 0 0 0 .5.5H5v.5a.5.5 0 0 0 .5.5H6v-1.5a.5.5 0 0 0-.5-.5H5v-.5a.5.5 0 0 0-.5-.5H3z"></path>
+              </svg>
+            
+              Listado de inmuebles</h1> 
+            <p class="lead">Entradas casas. Actualizadas diariamente.</p>
+          </div>
+        </div>
+
+        <div class="container">
+          
+        <div class="row featurette pb-2" id="propiedades">
+          <div class="col-md-7 bg-light rounded shadow-sm box ofh">
+            <div class="card-blog ">
+              
+              <div class="top-cross-ribbon">Oferta</div>
+                <h2 class="featurette-heading">La Marina Mazatlán<span class="text-danger"> . </span><span class="text-muted lead">Residencia.</span></h2>
+                <p class="lead"> Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                  <div class="badges">
+                    <span class="badge badge-secondary">2 baños y medio</span>
+                    <span class="badge badge-danger">Terraza</span>
+                  </div>
+                </p>
+                <a class="btn btn-secondary secondary-custom" href="#" role="button">Ver más &raquo;</a>
+        
+            </div>
+          </div>
+          <div class="col-md-5 pr-0">
+            <img class="featurette-image img-fluid mx-auto rounded" data-src="" alt="Generic placeholder image" src="assets/img/properties/A1/23.jpg">
+          </div>
+        </div>
+
+        <div class="row featurette pb-2">
+          <div class="col-md-7 order-md-2 bg-light rounded shadow-sm box ofh">
+            
+            <div class="card-blog">
+              
+              <h2 class="featurette-heading">Otra casa<span class="text-danger"> . </span><span class="text-muted lead">Grande.</span></h2>
+              <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo. ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+                <div class="badges">
+                  <span class="badge badge-danger">3 baños</span>
+                  <span class="badge badge-secondary">Patio</span>
+                </div>
+              </p>
+              <a class="btn btn-secondary secondary-custom" href="#" role="button">Ver más &raquo;</a>
+            </div>
+          </div>
+          <div class="col-md-5 pl-0">
+            <img class="featurette-image img-fluid mx-auto rounded" data-src="" alt="Generic placeholder image" src="assets/img/properties/A2/9.jpg">
+          </div>
+        </div>
+
+        <div class="row featurette pb-2 ">
+
+          <div class="col-md-7 bg-light rounded shadow-sm box ofh">
+            <div class="card-blog">
+              <div class="top-cross-ribbon">Oferta</div>
+              <h2 class="featurette-heading">El Cid<span class="text-danger"> . </span><span class="text-muted lead">Depas.</span></h2>
+              <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor dolis serpecuter.
+                <div class="badges">
+                  <span class="badge badge-secondary">Coto privado</span>
+                  <span class="badge badge-danger">Parque alrededor</span>
+                </div>
+              </p>
+              
+              <a class="btn btn-secondary secondary-custom" href="#" role="button">Ver más &raquo;</a>
+          </div>
+          </div>
+          <div class="col-md-5 pr-0">
+            <img class="featurette-image img-fluid mx-auto rounded" data-src="" alt="Generic placeholder image" src="assets/img/properties/A2/1.jpg">
+          </div>
+        </div>
+
+      </div>
+        <!-- /END THE FEATURETTES -->
+      <!-- /.container el cid--> 
+      
+     
+        <ul class="pagination justify-content-center text-uppercase">
+          <li class="page-item disabled">
+            <a class="page-link font-weight-bold text-icaxa-primary shadow-sm border-0" href="#" tabindex="-1">Anterior</a>
+          </li>
+          <li class="page-item"><a class="page-link text-secondary shadow-sm border-0" href="#">1</a></li>
+          <li class="page-item"><a class="page-link text-secondary shadow-sm border-0" href="#">2</a></li>
+          <li class="page-item"><a class="page-link text-secondary shadow-sm border-0" href="#">3</a></li>
+          <li class="page-item">
+            <a class="page-link font-weight-bold text-icaxa-primary shadow-sm border-0" href="#">Siguiente</a>
+          </li>
+        </ul>
+
+        <svg width="100%" height="12em" style="margin-top: -169px;" viewBox="0 0 100 100" preserveAspectRatio="none">
+          <path d="M0 0 L50 90 L100 0 V100 H0" fill="#d6d8d9" />
+        </svg>
+
+
+<!-- Jumbotron para blog -->
+<section class="spikes pt-1"></section>
+    <div class="row jumbotron jumbotron-fluid mb-0 pb-2 pt-5" id="nosotros" data-offset="-200px">
+      
+      <div class="container">
+
+        <h1 class="display-5 pl-3 text-uppercase">
+        
+          <svg width="1.3em" height="1.3em" viewBox="0 0 16 16" class="bi bi-pencil" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M11.293 1.293a1 1 0 0 1 1.414 0l2 2a1 1 0 0 1 0 1.414l-9 9a1 1 0 0 1-.39.242l-3 1a1 1 0 0 1-1.266-1.265l1-3a1 1 0 0 1 .242-.391l9-9zM12 2l2 2-9 9-3 1 1-3 9-9z"/>
+            <path fill-rule="evenodd" d="M12.146 6.354l-2.5-2.5.708-.708 2.5 2.5-.707.708zM3 10v.5a.5.5 0 0 0 .5.5H4v.5a.5.5 0 0 0 .5.5H5v.5a.5.5 0 0 0 .5.5H6v-1.5a.5.5 0 0 0-.5-.5H5v-.5a.5.5 0 0 0-.5-.5H3z"/>
+          </svg>
+        
+          Blog</h1> 
+        <p class="lead">Entradas del blog. Actualizadas diariamente.</p>
+      </div>
+    </div>
+<!-- END / Jumbotron para blog -->
+
+<!-- Entry Blog -->
+
+<div class="container">
+  <div class="row bg-light rounded shadow-sm box ofh px-5">
+    <div class="card-blog">
+
+      <h2 class="display-5 text-uppercase pt-4 pb-1 mb-0">  
+        Beneficios de vivir frente al mar
+        <span class="text-danger"> . </span>
+        <span class="text-muted lead">Blog.</span>
+        <span class="text-muted lead text-uppercase date-card" ><br/>Isaac Ríos Jacobo  — Aug. 13th 2020 5:54 am PT.</span><hr/>
+      </h2> 
+        
+      <span class="badge badge-secondary">#Café</span>
+      <span class="badge badge-danger">#Mar</span>
+      <span class="badge badge-secondary">#Beneficios</span>
+      <span class="badge badge-danger">#Metabolismo</span>
+      <span class="badge badge-secondary">#Paisajes</span>
+
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img class="first-slide w-100 rounded px-2 py-4 pb-6" src="assets/img/blog/1.jpg" alt="First slide"/>
+        </div>
+      </div>
+      
+      <div class="sharethis-inline-share-buttons pb-4" style="margin-top: -40px; position: auto;"></div>
+      <div addthis-tool tool-class="addthis_inline_share_toolbox"></div>
+
+        <section class="mx-auto">
+
+          <p class="lead">Cuando vives en una ciudad grande lo que más deseas es despertar con una hermosa vista al mar que únicamente es posible cuando estás de vacaciones en algún puerto. Pero, ¿y si te dijera que vivir frente al mar no es solo respirar aire puro y ver bonitos paisajes?</p>
+          <p class="lead">Existen muchos estudios que avalan que una persona que vive en ciudades frente al mar tiene menos problemas de articulaciones, presión arterial, problemas respiratorios, funcionamiento metabólico, aspecto de la piel, cicatrización y mucho más...</p>
+        </section>
+
+        <div class="container">
+          <div class="row">
+            <button class="btn btn-secondary mx-auto mb-4" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+              Leer más &raquo;
+            </button>
+          </div>
+        </div>
+
+        <div id="collapseExample" class="collapse">
+
+            <p class="lead">Vivir frente al mar no solo te ayudará a mejorar tu estado de ánimo, sino también tu salud se verá beneficiada. </p>
+            <p class="lead">El estilo de vida de una ciudad de playa es mucho, pero mucho muy relajado en comparación con una urbe como Guadalajara o Monterrey, en donde todos los días tienes que destinar al menos unas dos horas para trasladarte de tu casa al trabajo. Este tiempo sería ideal para que puedas disfrutar tu café por las mañanas o practiques un deporte.</p>      
+
+            <div class="bs-callout bs-callout-default my-4 mx-5">
+              <p class="lead">Imagínate, después de tu trabajo poder ir a caminar o correr a tu playa favorita; eso es música para el alma. De esta manera, podrás liberar el estrés y dormir mucho más tranquilo. Olvídate de tu vida sedentaria donde solo pasabas viendo Netflix que, la verdad, cuántos de nosotros ya estamos hartos del catálogo actual.</p>
+            </div>
+            
+            <p class="lead">Dejarás de gastar en tratamientos y terapias para disminuir tus niveles de estrés, con solo sentarte treinta minutos frente al mar, solucionarás tus problemas. Está comprobado que vivir frente al mar incrementa los niveles de serotonina. Esta sustancia ayuda a mejorar nuestro estado de humor y disminuye la posibilidad sufrir de ataques de depresión.</p>
+            <p class="lead">Aprovecha este tiempo para reflexionar y pensar en qué te gustaría mejorar de tu vida. Pocas veces tenemos tiempo para plantearnos qué es lo que realmente deseamos. No por nada dicen: “en el mar la vida es más sabrosa”.</p>
+            <p class="lead">Si te dijera que vivir frente al mar te ayudará a estabilizar tu metabolismo ¿me creerías?. Se ha comprobado que las personas que viven frente a zonas costeras experimentan un equilibrio en sus hormonas tiroideas lo cual favorece al metabolismo. Te ayudará a absorber mucho mejor el magnesio y calcio, así que adiós vitaminas y suplementos.</p>
+            <p class="lead font-weight-bold">¿Te animas a mudarte?</p>
+
+              <div class="px-5 py-5">
+                <div class="embed-responsive embed-responsive-16by9">
+                  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/LCWiBMRlo3w" allowfullscreen></iframe>
+                </div>
+              </div>
+
+            <div id="disqus_thread"></div>
+            <script>
+
+            var disqus_config = function () {
+            this.page.url = "https://www.icaxainmbuebles.com";
+            this.page.identifier = "ID_ICAXA_01";
+            };
+
+            (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+            s.src = 'https://https-www-icaxainmuebles-com.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+            })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        </div>
+    </div>
+  </div>
+</div>
+
+<!-- END / Entry Blog -->
+
+<!-- ///////////////// Separator -->
+<div class="container">
+  <hr/>
+</div>
+<!-- END ///////////////// Separator -->
+
+<!-- Entry Blog -->
+
+<div class="container">
+  <div class="row bg-light rounded shadow-sm box ofh px-5">
+    <div class="card-blog">
+
+      <h2 class="display-5 text-uppercase pt-4 pb-1 mb-0">  
+        Jubilación tropical
+        <span class="text-danger"> . </span>
+        <span class="text-muted lead">Blog.</span>
+        <span class="text-muted lead text-uppercase date-card" ><br/>Isaac Ríos Jacobo  — Aug. 13th 2020 5:54 am PT.</span><hr/>
+      </h2> 
+        
+      <span class="badge badge-secondary">#Café</span>
+      <span class="badge badge-danger">#Mar</span>
+      <span class="badge badge-secondary">#Beneficios</span>
+      <span class="badge badge-danger">#Metabolismo</span>
+      <span class="badge badge-secondary">#Paisajes</span>
+
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img class="first-slide w-100 rounded px-2 py-4 pb-6" src="assets/img/blog/2.jpg" alt="First slide"/>
+        </div>
+      </div>
+      
+      <div class="sharethis-inline-share-buttons pb-4" style="margin-top: -40px; position: auto;"></div>
+      <div addthis-tool tool-class="addthis_inline_share_toolbox"></div>
+
+        <section class="mx-auto">
+
+          <p class="lead">Así como le dedicaste tiempo a decidir dónde ibas a ejercer tu profesión, ahora te toca decidir en dónde deseas disfrutar tus años de jubilado.</p>
+          <p class="lead">Sé que existen muchas dudas y preguntas al tomar esta decisión, pero si te dijera que existe una ciudad donde tu dinero puede rendirte más y que, además, podrás comer rico y fresco todos los días, respirar aire puro, tomar el sol cuantas veces quieras, correr, saltar, nadar y muchas cosas más, ¿qué pensarías?...</p>
+        </section>
+
+        <div class="container">
+          <div class="row">
+            <button class="btn btn-secondary mx-auto mb-4" type="button" data-toggle="collapse" data-target="#collapseExample-2" aria-expanded="false" aria-controls="collapseExample">
+              Leer más &raquo;
+            </button>
+          </div>
+        </div>
+
+        <div id="collapseExample-2" class="collapse">
+            
+
+            <p class="lead">Sí, todo esto es posible en un pequeño lugar ubicado en el Pacífico, en la zona costera del estado de Sinaloa. Sé que muchos tienen la idea de que cualquier ciudad de Sinaloa es referente de peligro, pero esta ciudad se caracteriza por su tranquilidad y armonía. No por nada, han emigrado una gran cantidad de Americanos y Canadienses que han decidido pasar el resto de sus días en esta hermosa ciudad.</p>
+    
+            <div class="bs-callout bs-callout-default my-4 mx-5">
+              <p class="lead">Este año, Mazatlán ha sido calificado como la segunda mejor ciudad a nivel mundial para retirarse. Sí,i así como lo escuchas. Esta información se obtuvo de una investigación que fue realizada por Live and Invest Overseas, quienes son conocidos como LIOS. Esta firma estima que puedes vivir en Mazatlán con $1,133 dólares al mes, lo cual es menor al promedio de una persona retirada con Social Security Benefit en los Estados Unidos.</p>
+            </div>
+        
+            <p class="lead">Mazatlán es considerada una ciudad que lo tiene todo, cuenta con una amplia variedad de platillos gastronómicos que están para chuparse los dedos, hermosas vistas y atardeceres que te enamoran día a día. Podrás recorrer el malecón más grande del mundo, que tiene una longitud de 21 km, ideal para bajar esos kilitos que tenemos de más ¿no?</p>
+            <p class="lead">Mazatlán es cultura y tradición. A lo largo del año se realizan varias actividades culturales de gran nivel que te permitirán sentirte feliz de haber elegido este lindo puerto. </p>
+            
+            <p class="lead">Al radicar en México disminuirán tus gastos fijos mensuales. En una ciudad como Mazatlán puedes utilizar transporte público en caso de que no te guste manejar y así evitas estar pagando una mensualidad fija, servicios, seguros, etcétera.</p>
+            <p class="lead">Si tu pareja no habla español, ¡no te preocupes! En Mazatlán hasta en el supermercado encontrarás personas que pueden conversar contigo a la perfección.</p>
+            <p class="lead">No tengas miedo, aún es tiempo de vivir una nueva aventura en una ciudad diferente, cálida, con gente sencilla, amigable y que siempre está dispuesta a ayudarte.</p>
+        
+            <p class="lead font-weight-bold">¡Te estamos esperando!</p>
+
+              <div class="px-5 py-5">
+                <div class="embed-responsive embed-responsive-16by9">
+                  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/R-Obr1G_y_E" allowfullscreen></iframe>
+                </div>
+              </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+<!-- END / Entry Blog -->
+
+<!-- ///////////////// Separator -->
+<div class="container">
+  <hr/>
+</div>
+<!-- END ///////////////// Separator -->
+
+<!-- Entry Blog -->
+
+<div class="container">
+  <div class="row bg-light rounded shadow-sm box ofh px-5">
+    <div class="card-blog">
+
+      <h2 class="display-5 text-uppercase pt-4 pb-1 mb-0">  
+        Una reconfortante taza de café
+        <span class="text-danger"> . </span>
+        <span class="text-muted lead">Blog.</span>
+        <span class="text-muted lead text-uppercase date-card" ><br/>Isaac Ríos Jacobo  — Aug. 13th 2020 5:54 am PT.</span><hr/>
+      </h2> 
+        
+      <span class="badge badge-secondary">#Café</span>
+      <span class="badge badge-danger">#Mar</span>
+      <span class="badge badge-secondary">#Beneficios</span>
+      <span class="badge badge-danger">#Metabolismo</span>
+      <span class="badge badge-secondary">#Paisajes</span>
+
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img class="first-slide w-100 rounded px-2 py-4 pb-6" src="assets/img/blog/3.jpg" alt="First slide"/>
+        </div>
+      </div>
+      
+      <div class="sharethis-inline-share-buttons pb-4" style="margin-top: -40px; position: auto;"></div>
+      <div addthis-tool tool-class="addthis_inline_share_toolbox"></div>
+
+        <section class="mx-auto">
+
+            <p class="lead">Si eres de los que, aunque vivas frente al mar y sientas los cálidos 36 grados, tu mente y alma piden un café, te compartimos unas excelentes opciones donde podrás disfrutar esta aromática y deliciosa bebida con un toque muy Mazatleco.</p>
+
+            <p class="lead">El primer lugar que se me viene a la mente es Looney Bean Coffee Roasters. Con un ambiente relajado, mezclando el espíritu playero con la tradición local, cuenta con dos ubicaciones; una en la zona de Cerritos y la otra en Olas Altas, con una vista increíble hacia una de las playas más famosas de la ciudad...</p>
+
+        </section>
+
+        <div class="container">
+          <div class="row">
+            <button class="btn btn-secondary mx-auto mb-4" type="button" data-toggle="collapse" data-target="#collapseExample-1" aria-expanded="false" aria-controls="collapseExample">
+              Leer más &raquo;
+            </button>
+          </div>
+        </div>
+
+        <div id="collapseExample-1" class="collapse">
+            
+                <p class="lead">Estas dos locaciones están perfectamente ubicadas de extremo a extremo para facilitarte el traslado y ofrecen una atmósfera adecuada a todo tipo de personas, que hacen que te sientas como en casa. Looney Bean no solo ofrece café, sino también cuenta con una amplia variedad de ricos platillos, desde tradicionales desayunos americanos, hasta una deliciosa selección de antojitos locales. Además, si alguno de tus acompañantes no habla español, ¡no te preocupes!. En Looney Bean, el idioma no es una barrera.</p>
+                
+                <p class="lead">En la Zona Centro, muy cerca del distrito Histórico de la ciudad, podrás encontrar un encantador lugar con una personalidad bien definida: Tótem Cafetería de Barrio. Este café cuenta con una acogedora terraza en su segundo piso que te permitirá disfrutar de tu aromática bebida, mientras te deleitas con una espectacular vista hacia la principal plaza de la ciudad; la famosa Plazuela Machado. Y, si tienes perrihijo, ¡invítalo a que te acompañe a disfrutar! Sí, este lugar se caracteriza por ser Pet Friendly, así que no dudes en tener una cita con tu amiguito peludo.</p>
+                
+                <div class="bs-callout bs-callout-default my-4 mx-5">
+                  <p class="lead">Este lugar es tan instagrameable, que cada platillo y bebida la querrás compartir en tu perfil para que todos vean su belleza. Tótem tiene toda clase de granos de café y estilos de extracción, por lo que tendrás que acudir en varias ocasiones para poder probarlos todos. Por cierto, no olvides pedir el pan dulce del día, ya que diario hornean por la mañana galletas, muffins, pasteles y otras delicias… ¡Una experiencia muy satisfactoria!</p>
+                </div>
+
+                <p class="lead">Otra riquísima opción es Cafferium - Cafetería, Panadería y Arte. Este bello lugar es de los más recientes que se han sumado al puerto. Está ubicado a unas cuadras de la Plazuela Machado en el Centro de Mazatlán y ha llegado para quedarse. Cafferium brinda toda una experiencia visual desde el momento en que llegas. Establecido en una antigua casa con arquitectura neoclásica colonial, sus nuevos dueños se han encargado de convertirla en un lugar que proyecta tradición, colores y ricas sensaciones con un toque moderno. Cafferium ofrece una extensa variedad de granos, niveles de tostado y estilos de café, esparciendo su reconfortante aroma a través de las callecitas del Centro Histórico de Mazatlán.  </p>
+                
+                <p class="lead text font-weight-bold">¿Vamos por un café?</p>
+            
+
+              <div class="px-5 py-5">
+                <div class="embed-responsive embed-responsive-16by9">
+                  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/7wlWTJC1_TM" allowfullscreen></iframe>
+                </div>
+              </div>
+
+            <div id="disqus_thread"></div>
+
+            <div class="container">
+              <div class="row">
+                <button class="btn btn-secondary mx-auto mb-4" type="button" data-toggle="collapse" data-target="#collapseExample-1" aria-expanded="false" aria-controls="collapseExample">
+                  Ver comentarios &raquo;
+                </button>
+              </div>
+
+              <div class="row" data-toggle="collapse" data-target="#collapseExample-1" aria-expanded="false" aria-controls="collapseExample">
+                <svg width="1.8em" height="1.8em" viewBox="0 0 16 16" class="bi bi-chevron-compact-up mx-auto mb-4" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" d="M7.776 5.553a.5.5 0 0 1 .448 0l6 3a.5.5 0 1 1-.448.894L8 6.56 2.224 9.447a.5.5 0 1 1-.448-.894l6-3z"></path>
+                </svg>
+              </div>
+            </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+<!-- END / Entry Blog -->
+<ul class="pagination justify-content-center text-uppercase">
+  <li class="page-item disabled">
+    <a class="page-link font-weight-bold text-icaxa-primary shadow-sm border-0" href="#" tabindex="-1">Anterior</a>
+  </li>
+  <li class="page-item"><a class="page-link text-secondary shadow-sm border-0" href="#">1</a></li>
+  <li class="page-item"><a class="page-link text-secondary shadow-sm border-0" href="#">2</a></li>
+  <li class="page-item"><a class="page-link text-secondary shadow-sm border-0" href="#">3</a></li>
+  <li class="page-item">
+    <a class="page-link font-weight-bold text-icaxa-primary shadow-sm border-0" href="#">Siguiente</a>
+  </li>
+</ul>
+
+<svg width="100%" height="12em" style="margin-top: -169px;" viewBox="0 0 100 100" preserveAspectRatio="none">
+  <path d="M0 0 L50 90 L100 0 V100 H0" fill="#d6d8d9" />
+</svg>
+
+     <!-- Last Jumbotron -->
+     <section class="spikes pt-1"></section>
+    <div class="row jumbotron jumbotron-fluid mb-0 pb-4 pt-5">
+
+      <div class="container">
+
+        <div class="row">
+          <div class="col-md-8 justify-content-center">
+
+          <h1 class="display-5 pl-3 text-uppercase"> 
+            <svg width="1.3em" height="1.3em" viewBox="0 0 16 16" class="bi bi-blockquote-left" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" d="M2 3.5a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm5 3a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5zm-5 3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"/>
+              <path d="M3.734 6.352a6.586 6.586 0 0 0-.445.275 1.94 1.94 0 0 0-.346.299 1.38 1.38 0 0 0-.252.369c-.058.129-.1.295-.123.498h.282c.242 0 .431.06.568.182.14.117.21.29.21.521a.697.697 0 0 1-.187.463c-.12.14-.289.21-.503.21-.336 0-.577-.108-.721-.327C2.072 8.619 2 8.328 2 7.969c0-.254.055-.485.164-.692.11-.21.242-.398.398-.562.16-.168.33-.31.51-.428.18-.117.33-.213.451-.287l.211.352zm2.168 0a6.588 6.588 0 0 0-.445.275 1.94 1.94 0 0 0-.346.299c-.113.12-.199.246-.257.375a1.75 1.75 0 0 0-.118.492h.282c.242 0 .431.06.568.182.14.117.21.29.21.521a.697.697 0 0 1-.187.463c-.12.14-.289.21-.504.21-.335 0-.576-.108-.72-.327-.145-.223-.217-.514-.217-.873 0-.254.055-.485.164-.692.11-.21.242-.398.398-.562.16-.168.33-.31.51-.428.18-.117.33-.213.451-.287l.211.352z"/>
+            </svg>
+            
+            Nos dedicamos </h1> 
+            <p class="lead">A brindar servicios inmobiliarios profesionales de excelencia a través de nuestra experiencia y conocimiento del mercado local. </p>
+              <button type="button" class="btn btn-outline-dark float-left mx-3" data-toggle="modal" data-target="#exampleModal">Contactar</button>
+            <p class="lead">Envíenos un e-mail, por medio de nuestro formulario de contacto online.</p>
+        
+          </div>
+
+          <div class="col-md-4 d-flex justify-content-center">
+            <img src="assets/img/elements/isaac-sign.svg" width="210px" height="150px" /> 
+          </div>
+      </div>
+      </div>
+    </div>
+    
+<!-- END Last Jumbotron -->
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header border-0 pb-0">
+        <h2 class="modal-title" id="exampleModalLabel">Formulario de contacto<span class="text-danger"><strong> .</strong></span></h2>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label text-uppercase"><span class="text-danger"><strong>+ </strong></span>Remitente:</label>
+            <input type="email" class="form-control" id="recipient-name" placeholder="remitente@ejemplo.com">
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="col-form-label text-uppercase"><span class="text-danger"><strong>+ </strong></span>Mensaje:</label>
+            <textarea class="form-control" id="message-text"></textarea>
+          </div>
+        </form>
+      </div>
+
+      <div class="modal-footer border-top-0">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-secondary">Enviar &raquo;</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Formulario de contacto</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary">Enviar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <!-- Footer -->
+<footer class="pt-5 bg-light shadow-sm">
+
+  <script src="https://kit.fontawesome.com/e9d88d2c44.js" crossorigin="anonymous"></script>
+  
+  <!-- Footer Links -->
+  <div class="container-fluid text-center text-md-left container">
+    <!-- Grid row -->
+    <div class="row">
+
+      <!-- Grid column -->
+      <div class="col-md-6 mt-md-0 mt-3">
+
+        <!-- Content -->
+        <h5 class="text-uppercase text-icaxa-primary font-weight-bold">Inmobiliaria <span class="text-danger">+</span> Desarrollos<span class="text-danger"> .</span></h5>
+        <p class="text-icaxa-gray text-uppercase">Síguenos en nuestras redes sociales.</p>
+
+        <ol class="social-icons">
+          <li><a href="#"><div class="icon-facebook"></div></a></li>
+          <li><a href="#"><div class="icon-instagram"></div></a></li>
+          <li><a href="#"><div class="icon-linkedin"></div></a></li>
+          <li><a href="#"><div class="icon-youtube"></div></a></li>
+          <li><a href="#"><div class="icon-whatsapp"></div></a></li>
+        </ol>
+
+      </div>
+      <!-- Grid column -->
+
+      <hr class="clearfix w-100 d-md-none pb-3">
+
+      <!-- Grid column -->
+      <div class="col-md-3 mb-md-0 mb-3">
+
+        <!-- Links -->
+        <h5 class="text-uppercase text-icaxa-primary font-weight-bold">Servicios<span class="text-danger"> .</span></h5>
+
+        <ul class="list-unstyled text-uppercase">
+          <li class="pb-1 text-icaxa-gray">
+            <span class="text-danger"><strong>+ </strong></span><a href="#!">Venta y renta de propiedades</a>
+          </li>
+          <li class="pb-1 text-icaxa-gray">
+            <span class="text-danger"><strong>+ </strong><a href="#!">Análisis comercial</a>
+          </li>
+          <li class="pb-1 text-icaxa-gray">
+            <span class="text-danger"><strong>+ </strong><a href="#!">Consultoría profesional</a>
+          </li>
+          <li class="text-icaxa-gray">
+            <span class="text-danger"><strong>+ </strong><a href="#!">Gestión de créditos</a>
+          </li>
+        </ul>
+
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-3 mb-md-0 mb-3">
+
+        <!-- Links -->
+        <h5 class="text-uppercase text-icaxa-primary font-weight-bold">Links<span class="text-danger"> .</span></h5>
+
+        <ul class="list-unstyled text-uppercase">
+          <li class="pb-1 text-icaxa-gray">
+            <span class="text-danger"><strong>+ </strong><a href="#!">¿Por qué invertir en Mazatlán?</a>
+          </li>
+          <li class="pb-1 text-icaxa-gray">
+            <span class="text-danger"><strong>+ </strong><a href="#!">Trayectoria</a>
+          </li>
+          <li class="text-icaxa-gray">
+            <span class="text-danger"><strong>+ </strong><a href="#!">Blog</a>
+          </li>
+        </ul>
+
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row -->
+
+  </div>
+  <!-- Footer Links -->
+  
+  <div class="footer-copyright text-center pt-3 pb-4" style="">&copy; 2020 <div class="favicon"></div><strong class="text-icaxa-primary">ICAXA</strong>, Inmobiliaria.</a></div>
+
+</footer>
+<!-- Footer -->
+
+<script id="dsq-count-scr" src="//https-www-icaxainmuebles-com.disqus.com/count.js" async></script>
+
+  </body>
 </html>
